@@ -20,7 +20,7 @@
 .box-heading{
 	text-align: center;
 	color: black;
-	padding:3em 0 1em;
+	padding:2em 0 1em;
 }
 
 /* This is the form */
@@ -41,7 +41,7 @@
     color: white;
    	padding:3em;
    	font-family: 'Fira Mono', monospace;
-    font-size: 1.25em;
+    font-size: 1em;
     height:20em;
     border:none;
 	border-radius:3px;
