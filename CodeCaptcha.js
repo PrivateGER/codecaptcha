@@ -9,11 +9,12 @@ var captchaCode = document.getElementById("captchaCode");
 var errorOutput = document.getElementById("errorMessg");
 var solution;
 
-// codes consists of a dict with keys code, soluton and language each holding the said values
+// codes consists of a dict with keys code, soluton each holding the said values and another list with language
 
-const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solution": "hi!" , "lang": "javascript"},
- {"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number" , "lang": "javascript"}];
+const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solution": "hi!"},
+ {"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number"}];
 
+const lang = ["Javascript","Javascript"];
 
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
@@ -41,7 +42,7 @@ function fillEditor() {
 	//This function selects a random code and solution and changes the global variables
 	var codeCount = codes.length;
 	var codeID = randIntFromInterval(0, codeCount-1);
-  document.getElementById('language-name').innerHTML="Language : " + codes[codeID].lang;
+  document.getElementById('language-name').innerHTML="Language : " + lang[codeID];
 	captchaCode.value = codes[codeID].code;
 	solution = codes[codeID].solution;
 }
