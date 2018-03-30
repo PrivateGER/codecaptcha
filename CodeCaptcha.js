@@ -21,13 +21,11 @@ function runTest() {
 	try {
 		var output = eval(captchaCode.value); // Removes newlines and runs script
 		if(output === solution) {
-			//Please, please do not use alerts.
-			//alert("Successfully completed!");
 			errorOutput.innerHTML = "";
 			document.getElementById("submit").disabled = false; //TODO: Change hardcoded ID
 			document.getElementById("submit").className = "submit notDisabledSubmit";
 		} else {
-			alert("Wrong answer. Your code returns " + output);
+			errorOutput.innerHTML = "Wrong answer. Your code returns " + output;
 		}
 	}
 	catch(err) {
