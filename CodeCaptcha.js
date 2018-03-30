@@ -9,6 +9,8 @@ var captchaCode = document.getElementById("captchaCode");
 var errorOutput = document.getElementById("errorMessg");
 var solution;
 
+// codes consists of a dict with keys code, soluton and language each holding the said values
+
 const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solution": "hi!" , "lang": "javascript"},
  {"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number" , "lang": "javascript"}];
 
