@@ -9,19 +9,19 @@ var captchaCode = document.getElementById("captchaCode");
 var errorOutput = document.getElementById("errorMessg");
 var solution;
 
-const codes = [{"code": "function main() {retun 'hi!'; } main();", "solution": "hi!"}, {"code": "function main() {if(num !< 10) {return 'Big number'} else {return 'Small Number'} } main(12);", "solution": "Big number"}];
+const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solution": "hi!"}, {"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number"}];
 
 
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
 	try {
-		var output = eval(captchaCode.value); //Gets the printed output of the script
+		var output = eval(captchaCode.value); // Removes newlines and runs script
 		if(output === solution) {
 			alert("Successfully completed!");
 			document.getElementById("submit").disabled = false; //TODO: Change hardcoded ID
-			document.getElementById("submit").style = "background-color: green"
+			document.getElementById("submit").style = "background-color: green";
 		} else {
-			alert("Wrong answer. Your code returns " + output); 
+			alert("Wrong answer. Your code returns " + output);
 		}
 	}
 	catch(err) {
