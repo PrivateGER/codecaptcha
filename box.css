@@ -1,0 +1,41 @@
+.body{
+  background-color: black ;
+}
+
+/* This is the introductory heading */
+.box-heading{
+  text-align: center;
+  font : helvetica;
+  color: white;
+}
+/* This is the form */
+.box{}
+
+.textArea{
+  width: 100%;
+}
+/* This is the textarea */
+#captchaCode{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #808080;
+    color: black;
+    font-size: 1.25em;
+}
+/* Error messages if any */
+#errorMessg{
+  text-align: center;
+  font-size: 1em;
+  color: red;
+}
+
+/* These are the buttons */
+#submit{
+  border-radius: 10%;
+  display : block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: black;
+}
