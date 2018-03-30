@@ -13,8 +13,10 @@
         <textarea id="captchaCode" cols="50" rows="25" placeholder="Code goes here"></textarea>
         <p id="errorMessg">Errors go here</p>
         <hr/>
-        <button id="submit">I'm a dev lemme in!
-        <button id="submit">Get another code
+        <button type="button" class="submit" onclick="runTest()">Run code</button>
+        <button type="button" class="submit" onclick="fillEditor()">Get another code</button>
+        <button type="submit" id="submit" class="submit disabledSubmit" disabled>Submit</button>
   </form>
+  <script type="text/javascript" src="CodeCaptcha.js"></script>
   </body>
 </html>
