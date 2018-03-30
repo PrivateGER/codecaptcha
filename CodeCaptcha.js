@@ -14,7 +14,6 @@ var solution;
 const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solution": "hi!"},
 {"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number"}
 , {"code": "function randIntFromInterval(min, max) {\n    return Matth.flooor(Math.random()*(max-miin+1)+min);\n}\nfunction main() {\n    var ranInt = randIntFromInterval(1, 1);\n    return randInt;\n}\nmain();", "solution": 1}];
-
 const lang = ["Javascript","Javascript","Javascript"];
 
 function runTest() {
@@ -22,9 +21,11 @@ function runTest() {
 	try {
 		var output = eval(captchaCode.value); // Removes newlines and runs script
 		if(output === solution) {
-			alert("Successfully completed!");
+			//Please, please do not use alerts.
+			//alert("Successfully completed!");
+			errorOutput.innerHTML = "";
 			document.getElementById("submit").disabled = false; //TODO: Change hardcoded ID
-			document.getElementById("submit").style = "background-color: green";
+			document.getElementById("submit").className = "submit notDisabledSubmit";
 		} else {
 			alert("Wrong answer. Your code returns " + output);
 		}

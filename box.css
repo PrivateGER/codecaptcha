@@ -1,45 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500');
+
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+*:focus{
+	outline:none;
+}
+
 .body{
-  background-color: black ;
+  background-color: white;
 }
 
 /* This is the introductory heading */
 .box-heading{
-  text-align: center;
-  font : helvetica;
-  color: white;
+	text-align: center;
+	color: black;
+	padding:3em 0 1em;
 }
+
 /* This is the form */
-.box{}
+.box{
+	text-align:center;
+}
 
 .textArea{
   width: 100%;
 }
+
 /* This is the textarea */
 #captchaCode{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: #808080;
-    color: black;
+    background-color: #282A36;
+    color: white;
+   	padding:3em;
+   	font-family: 'Fira Mono', monospace;
     font-size: 1.25em;
+    height:20em;
+    border:none;
+	border-radius:3px;
 }
+
+hr{
+	width:50%;
+	height:2px;
+	border:none;
+	background:#ccc;
+	margin:10px auto;
+}
+
 /* Error messages if any */
 #errorMessg{
   text-align: center;
   font-size: 1em;
-  color: red;
+  color: #F44336;
+  font-weight: bold;
+  padding:15px 0 5px;
 }
 
 /* These are the buttons */
 .submit{
-  border-radius: 10%;
-  display : block;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  background-color: black;
+	border-radius: 3px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(0,0,0,0.7);
+    background-color: white;
+    border: 2px solid rgba(0,0,0,0.1);
+    padding: 10px 30px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: border-color 120ms ease-in, color 120ms ease-in-out, background-color 200ms;
+    cursor:pointer;
+}
+
+.submit:not(.disabledSubmit):hover{
+	color:rgba(0,0,0,0.9);
+	border-color:rgba(0,0,0,0.3);
 }
 
 .disabledSubmit {
-  background-color: red;
+	background-color: #f44336;
+	cursor:not-allowed;
+}
+
+.notDisabledSubmit{
+	background-color: #8bc34a;
 }
