@@ -2,14 +2,28 @@
 <html>
 <head>
 <title>CodeCaptcha Sample</title>
+<link rel="stylesheet" href="styling.css">
+<meta charset="UTF-8">
 </head>
 <body>
 	<form action="" method="get">
-		<input type="text" name="sampleInput1">
-		<input type="text" name="sampleInput2">
-		<div class="codecaptcha">
-
-		</div>
+		<input type="text" placeholder="Generic Form" name="sampleInput1">
+		<br />
+		<input type="text" placeholder="Generic Form" name="sampleInput2">
+		<br />
+		<input type="submit" id="submit" value="Submit" disabled>
 	</form>
+	<div class="codecaptcha">
+			<hr />
+			<p>Verify you are not a bot by debugging this code!</p> 
+			<textarea col="40" rows="20" id="codeArea" placeholder="Code goes here...">
+
+			</textarea>
+			<p id="codeError"></p>
+			<br />
+			<button onclick="runTest()">Run the code</button>
+			<hr />
+		</div>
+	<script type="text/javascript" src="CodeCaptcha.js"></script>
 </body>
 </html>
