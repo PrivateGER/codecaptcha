@@ -9,9 +9,12 @@ var captchaCode = document.getElementById("captchaCode");
 var errorOutput = document.getElementById("errorMessg");
 var solution;
 
-const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solution": "hi!"},{"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number"}];
+// codes consists of a dict with keys code, soluton each holding the said values and another list with language
 
-const lang = ["Javascript","Javascript"];
+const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solution": "hi!"},
+{"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number"}
+, {"code": "function randIntFromInterval(min, max) {\n    return Matth.flooor(Math.random()*(max-miin+1)+min);\n}\nfunction main() {\n    var ranInt = randIntFromInterval(1, 1);\n    return randInt;\n}\nmain();", "solution": 1}];
+const lang = ["Javascript","Javascript","Javascript"];
 
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
