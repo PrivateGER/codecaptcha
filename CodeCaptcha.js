@@ -19,9 +19,9 @@ function runTest() {
 		if(output === solution) {
 			alert("Successfully completed!");
 			document.getElementById("submit").disabled = false; //TODO: Change hardcoded ID
-			document.getElementById("submit").style = "background-color: green"
+			document.getElementById("submit").style = "background-color: green";
 		} else {
-			alert("Wrong answer. Your code returns " + output); 
+			alert("Wrong answer. Your code returns " + output);
 		}
 	}
 	catch(err) {
