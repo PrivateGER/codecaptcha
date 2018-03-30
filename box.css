@@ -31,11 +31,15 @@
 }
 
 /* These are the buttons */
-#submit{
+.submit{
   border-radius: 10%;
   display : block;
   margin-left: auto;
   margin-right: auto;
   color: white;
   background-color: black;
+}
+
+.disabledSubmit {
+  background-color: red;
 }
