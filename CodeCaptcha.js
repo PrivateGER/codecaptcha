@@ -18,10 +18,43 @@ const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "sol
 
 const lang = ["Javascript","Javascript","Javascript", "Javascript"];
 
+function httpGETAsync(url, callback) {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.onreadystatechange = function() {
+		if(xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+			callback(xmlHttp.responseText);
+		}
+	};
+	xmlHttp.open("GET", url, true);
+	xmlHttp.send(null);
+}
+
+function runJS(code) {
+	return eval(code);
+}
+
+function runRuby(code) {
+	var url = "http://opalrb.com/try/?code:" + encodeURIComponent(code); 
+		httpGETAsync(url, function(response) {
+		var output = response.substring(response.lastIndexOf("<pre>")+1, response.lastIndexOf("</pre>"));
+		return output;
+	});
+}
+
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
 	try {
-		var output = eval(captchaCode.value); // Removes newlines and runs script
+		var output;
+		var langArr = document.getElementById("language-name").innerHTML.split(" ");
+		var language = langArr[2];
+
+		if(language === "Javascript") {
+			output = runJS(captchaCode.value);
+		} 
+		else if(language === "Ruby") {
+			output = runRuby(captchaCode.value); //TODO: See TODO file
+		}
+		
 		if(output === solution) {
 			errorOutput.innerHTML = "";
 			document.getElementById("submit").disabled = false; //TODO: Change hardcoded ID
@@ -44,7 +77,7 @@ function fillEditor() {
 	//This function selects a random code and solution and changes the global variables
 	var codeCount = codes.length;
 	var codeID = randIntFromInterval(0, codeCount-1);
-  document.getElementById("language-name").innerHTML="Language : " + lang[codeID];
+    document.getElementById("language-name").innerHTML="Language : " + lang[codeID];
 	captchaCode.value = codes[codeID].code;
 	solution = codes[codeID].solution;
 }
