@@ -44,14 +44,15 @@ function runRuby(code) {
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
 	try {
+		var output;
 		var langArr = document.getElementById("language-name").innerHTML.split(" ");
 		var language = langArr[2];
 
 		if(language === "Javascript") {
-			var output = runJS(captchaCode.value);
+			output = runJS(captchaCode.value);
 		} 
 		else if(language === "Ruby") {
-			var output = runRuby(captchaCode.value); //TODO: See TODO file
+			output = runRuby(captchaCode.value); //TODO: See TODO file
 		}
 		
 		if(output === solution) {
