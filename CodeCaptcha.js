@@ -84,3 +84,10 @@ function fillEditor() {
 }
 
 fillEditor();
+
+
+// Dark theme
+function changeTheme(){
+		var obj = document.getElementById("sty");
+		obj.href = "dark_theme.css";
+}
