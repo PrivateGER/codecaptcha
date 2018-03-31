@@ -13,7 +13,7 @@
 }
 
 .body{
-  background-color: white;
+	background-color: #757575;
 }
 
 /* This is the introductory heading */
@@ -59,7 +59,7 @@ hr{
 #errorMessg{
   text-align: center;
   font-size: 1em;
-  color: #F44336;
+  color: white;
   font-weight: bold;
   padding:15px 0 5px;
 }
