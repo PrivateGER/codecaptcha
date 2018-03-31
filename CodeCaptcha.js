@@ -21,10 +21,10 @@ const lang = ["Javascript","Javascript","Javascript", "Javascript"];
 function httpGETAsync(url, callback) {
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function() {
-		if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+		if(xmlHttp.readyState === 4 && xmlHttp.status === 200) {
 			callback(xmlHttp.responseText);
 		}
-	}
+	};
 	xmlHttp.open("GET", url, true);
 	xmlHttp.send(null);
 }
@@ -44,13 +44,14 @@ function runRuby(code) {
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
 	try {
-		var lang = document.getElementById("language-name").innerHTML;
+		var langArr = document.getElementById("language-name").innerHTML.split(" ");
+		var language = langArr[2];
 
-		if(lang === "Javascript") {
-			runJS(captchaCode.value);
+		if(language === "Javascript") {
+			var output = runJS(captchaCode.value);
 		} 
-		else if(lang === "Ruby") {
-			runRuby(captchaCode.value); //TODO: See TODO file
+		else if(language === "Ruby") {
+			var output = runRuby(captchaCode.value); //TODO: See TODO file
 		}
 		
 		if(output === solution) {
