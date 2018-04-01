@@ -37,7 +37,7 @@ function runJS(code) {
 }
 
 function runRuby(code) {
-	var url = "http://opalrb.com/try/?code:" + encodeURIComponent(code); 
+	var url = "http://opalrb.com/try/?code:" + encodeURIComponent(code);
 		httpGETAsync(url, function(response) {
 		var output = response.substring(response.lastIndexOf("<pre>")+1, response.lastIndexOf("</pre>"));
 		return output;
@@ -53,11 +53,11 @@ function runTest() {
 
 		if(language === "Javascript") {
 			output = runJS(captchaCode.value);
-		} 
+		}
 		else if(language === "Ruby") {
 			output = runRuby(captchaCode.value); //TODO: See TODO file
 		}
-		
+
 		if(output === solution) {
 			errorOutput.innerHTML = "";
 			document.getElementById("submit").disabled = false; //TODO: Change hardcoded ID
@@ -92,11 +92,13 @@ fillEditor();
 function changeTheme(){
 	if(!darkTheme) {
 		theme.href = "dark_theme.css";
-		theme.innerText = "Light theme";
+	//	theme.innerText = "Light theme";
+	document.getElementById("chtheme").innerHTML="Light theme"
 		darkTheme = true;
 	} else {
 		theme.href = "light_theme.css";
-		theme.innerText = "Dark theme";
+//		theme.innerText = "Dark theme";
+		document.getElementById("chtheme").innerHTML="Dark theme"
 		darkTheme = false;
 	}
 }
