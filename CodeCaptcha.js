@@ -93,12 +93,12 @@ function changeTheme(){
 	if(!darkTheme) {
 		theme.href = "dark_theme.css";
 	//	theme.innerText = "Light theme";
-	document.getElementById("chtheme").innerHTML="Light theme"
+	document.getElementById("chtheme").innerHTML="Light theme";
 		darkTheme = true;
 	} else {
 		theme.href = "light_theme.css";
 //		theme.innerText = "Dark theme";
-		document.getElementById("chtheme").innerHTML="Dark theme"
+		document.getElementById("chtheme").innerHTML="Dark theme";
 		darkTheme = false;
 	}
 }
