@@ -7,8 +7,6 @@
 
 var captchaCode = document.getElementById("captchaCode");
 var errorOutput = document.getElementById("errorMessg");
-var darkTheme = false;
-var theme = document.getElementById("sty");
 var solution;
 
 // codes consists of a dict with keys code, soluton each holding the said values and another list with language
@@ -90,11 +88,6 @@ fillEditor();
 
 // Dark theme
 function changeTheme(){
-	if(!darkTheme) {
-		theme.href = "dark_theme.css";
-		theme.innerHTML = "Light theme";
-	} else {
-		theme.href = "light_theme.css";
-		theme.innerHTML = "Dark theme";
-	}
+		var obj = document.getElementById("sty");
+		obj.href = "dark_theme.css";
 }
