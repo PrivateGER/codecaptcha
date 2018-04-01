@@ -92,11 +92,11 @@ fillEditor();
 function changeTheme(){
 	if(!darkTheme) {
 		theme.href = "dark_theme.css";
-		theme.innerHTML = "Light theme";
+		theme.value = "Light theme";
 		darkTheme = true;
 	} else {
 		theme.href = "light_theme.css";
-		theme.innerHTML = "Dark theme";
+		theme.value = "Dark theme";
 		darkTheme = false;
 	}
 }
