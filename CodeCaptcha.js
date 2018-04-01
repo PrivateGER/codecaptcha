@@ -93,8 +93,10 @@ function changeTheme(){
 	if(!darkTheme) {
 		theme.href = "dark_theme.css";
 		theme.innerHTML = "Light theme";
+		darkTheme = true;
 	} else {
 		theme.href = "light_theme.css";
 		theme.innerHTML = "Dark theme";
+		darkTheme = false;
 	}
 }
