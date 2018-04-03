@@ -94,9 +94,9 @@ function runTest() {
 function randIntFromInterval(min, max) {
 	return Math.floor(Math.random()*(max-min+1)+min);
 }
-
-deCount = codes.length;
-	var codeID = randIntFromInterval(0, codeCount-1);
+function fillEditor(){
+		var codeCount = codes.length;
+		var codeID = randIntFromInterval(0, codeCount-1);
     document.getElementById("language-name").innerHTML="Language : " + lang[codeID];
 		document.getElementById("errorMessg").innerHTML="";
 		document.getElementById("submit").disabled = true;
@@ -106,7 +106,6 @@ deCount = codes.length;
 }
 
 fillEditor();
-
 
 // Dark theme
 function changeTheme(){
