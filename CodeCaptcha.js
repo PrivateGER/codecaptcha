@@ -49,10 +49,7 @@ function runCpp(code) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://api.judge0.com", true);
 	xhr.setRequestHeader("Content-Type", "application/json");
-	var body = {
-  		"source_code": code;
-  		"language_id": 4;
-	}
+	var body={"source_code": code,"language_id": 4,}
 	function processRequest(e) {
 		if (xhr.readyState == 4 && xhr.status == 200) {
          var response = JSON.parse(xhr.responseText);
@@ -61,7 +58,7 @@ function runCpp(code) {
 	}
 	xhr.send(body);
 	xhr.onreadystatechange = processRequest;
-	
+
 }
 
 function runTest() {
@@ -69,6 +66,7 @@ function runTest() {
 	try {
 		var output;
 		var langArr = document.getElementById("language-name").innerHTML.split(" ");
+		console.log(langArr);
 		var language = langArr[2];
 
 		if(language === "Javascript") {
@@ -104,6 +102,9 @@ function fillEditor() {
 	var codeCount = codes.length;
 	var codeID = randIntFromInterval(0, codeCount-1);
     document.getElementById("language-name").innerHTML="Language : " + lang[codeID];
+		document.getElementById("errorMessg").innerHTML="";
+		document.getElementById("submit").disabled = true;
+		document.getElementById("submit").className = "submit disabledSubmit";
 	captchaCode.value = codes[codeID].code;
 	solution = codes[codeID].solution;
 }
