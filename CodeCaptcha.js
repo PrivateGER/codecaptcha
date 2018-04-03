@@ -49,7 +49,7 @@ function runCpp(code) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://api.judge0.com", true);
 	xhr.setRequestHeader("Content-Type", "application/json");
-	var body={"source_code": code,"language_id": 4}
+	var body={"source_code": code,"language_id": 4};
 	function processRequest(e) {
 		if (xhr.readyState == 4 && xhr.status == 200) {
          var response = JSON.parse(xhr.responseText);
