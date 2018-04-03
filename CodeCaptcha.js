@@ -17,9 +17,10 @@ const codes = [{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "sol
 {"code": "function main() {\n    if(num !< 10) {\n        return 'Big number'} \n    else {\n        return 'Small Number'\n    }\n}\nmain(12);", "solution": "Big number"},
 {"code": "function randIntFromInterval(min, max) {\n    return Matth.flooor(Math.random()*(max-miin+1)+min);\n}\nfunction main() {\n    var ranInt = randIntFromInterval(1, 1);\n    return randInt;\n}\nmain();", "solution": 1},
 {"code": "function getUsername(user) {\n    return user[name];\n}\n \nfunction getTel() {\n    return user[tel];\n}\nuser = {'name': 'Daniel', 'Tel': '+23 54536536536'};\ngetTel(user);\n", "solution": "+23 54536536536"},
-{"code": "function init() {\n    var name = 'Dan';\n    var age = 21;\n}\n \n function getName() {\n    return name;\n}\n \ninit();\ngetName();\n", "solution": "Dan"}];
+{"code": "function init() {\n    var name = 'Dan';\n    var age = 21;\n}\n \n function getName() {\n    return name;\n}\n \ninit();\ngetName();\n", "solution": "Dan"},
+{"code": "#include <stdio.h>\n\nint main(void) {\n  printf(hello)\n  return 0\n}", "solution": "hello"}];
 
-const lang = ["Javascript","Javascript","Javascript", "Javascript", "Javascript"];
+const lang = ["Javascript","Javascript","Javascript", "Javascript", "Javascript", "C++"];
 
 function httpGETAsync(url, callback) {
 	var xmlHttp = new XMLHttpRequest();
@@ -44,6 +45,24 @@ function runRuby(code) {
 	});
 }
 
+function runCpp(code) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', "https://api.judge0.com", true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	var body = {
+  		"source_code": code,
+  		"language_id": 4,
+	}
+	xhr.send(body);
+	xhr.onreadystatechange = processRequest;
+	function processRequest(e) {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+         var response = JSON.parse(xhr.responseText);
+         alert(response.compile_output + response.message);
+     }
+	}
+}
+
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
 	try {
@@ -56,6 +75,9 @@ function runTest() {
 		}
 		else if(language === "Ruby") {
 			output = runRuby(captchaCode.value); //TODO: See TODO file
+		}
+		else if(language="C++") {
+			output = runCpp(captchaCode.value);
 		}
 
 		if(output === solution) {
