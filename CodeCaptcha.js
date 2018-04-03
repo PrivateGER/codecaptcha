@@ -49,7 +49,7 @@ function runCpp(code) {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://api.judge0.com", true);
 	xhr.setRequestHeader("Content-Type", "application/json");
-	var body={"source_code": code,"language_id": 4,}
+	var body={"source_code": code,"language_id": 4}
 	function processRequest(e) {
 		if (xhr.readyState == 4 && xhr.status == 200) {
          var response = JSON.parse(xhr.responseText);
@@ -66,7 +66,6 @@ function runTest() {
 	try {
 		var output;
 		var langArr = document.getElementById("language-name").innerHTML.split(" ");
-		console.log(langArr);
 		var language = langArr[2];
 
 		if(language === "Javascript") {
@@ -96,10 +95,7 @@ function randIntFromInterval(min, max) {
 	return Math.floor(Math.random()*(max-min+1)+min);
 }
 
-
-function fillEditor() {
-	//This function selects a random code and solution and changes the global variables
-	var codeCount = codes.length;
+deCount = codes.length;
 	var codeID = randIntFromInterval(0, codeCount-1);
     document.getElementById("language-name").innerHTML="Language : " + lang[codeID];
 		document.getElementById("errorMessg").innerHTML="";
