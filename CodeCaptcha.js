@@ -51,7 +51,6 @@ function runCpp(code) {
 	    if (xhr.readyState === 4 && xhr.status === 200) {
                   var response=JSON.parse(xhr.responseText);
                   alert(response.compile_output+response.message);
-	    }
 	}
 	xhr.send(body);
 	xhr.onreadystatechange = processRequest;
