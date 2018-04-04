@@ -14,7 +14,7 @@ const codes=[{"code": "function main() { \n    retun 'hi!';\n}\nmain();", "solut
 {"code": "function randIntFromInterval(min, max) {\n    return Matth.flooor(Math.random()*(max-miin+1)+min);\n}\nfunction main() {\n    var ranInt = randIntFromInterval(1, 1);\n    return randInt;\n}\nmain();", "solution": 1},
 {"code": "function getUsername(user) {\n    return user[name];\n}\n \nfunction getTel() {\n    return user[tel];\n}\nuser = {'name': 'Daniel', 'Tel': '+23 54536536536'};\ngetTel(user);\n", "solution": "+23 54536536536"},
 {"code": "function init() {\n    var name = 'Dan';\n    var age = 21;\n}\n \n function getName() {\n    return name;\n}\n \ninit();\ngetName();\n", "solution": "Dan"},
-//C++ puzzle has to be changed because it's correct already. This is just for testing purposes 
+//C++ puzzle has to be changed because it's correct already. This is just for testing purposes
 {"code": "#include <iostream>\nusing namespace std;\n\nint main() {\ncout << 'hello';\nreturn 0;\n}", "solution": "hello"}];
 
 const lang=["Javascript","Javascript","Javascript", "Javascript", "Javascript", "C++"];
@@ -56,7 +56,7 @@ function runCpp(code) {
 	xhr.onreadystatechange = processRequest;
 
 }
-
+}
 function runTest() {
 	//We run the code of the editor in a trycatch so the interpreter won't halt the script
 	try {
