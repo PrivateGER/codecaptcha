@@ -52,8 +52,8 @@ function runCpp(code) {
 	var body={"source_code": code,"language_id": 4};
 	function processRequest(e) {
 		if (xhr.readyState == 4 && xhr.status == 200) {
-         var response = JSON.parse(xhr.responseText);
-         alert(response.compile_output + response.message);
+         var response=JSON.parse(xhr.responseText);
+         alert(response.compile_output+response.message);
      }
 	}
 	xhr.send(body);
