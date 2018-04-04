@@ -71,7 +71,7 @@ function runTest() {
 		else if(language === "Ruby") {
 			output = runRuby(captchaCode.value); //TODO: See TODO file
 		}
-		else if(language="C++") {
+		else if(language==="C++") {
 			output = runCpp(captchaCode.value);
 		}
 
